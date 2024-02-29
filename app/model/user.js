@@ -16,10 +16,6 @@ module.exports = (app) => {
             required: true,
             select: false,
         },
-        phone: {
-            type: String,
-            required: true,
-        },
         image: {
             type: String,
             default: null,
