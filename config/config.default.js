@@ -14,7 +14,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1709196804769_4720';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ['errorHandler'];
 
   // add your user config here
   const userConfig = {
@@ -29,6 +29,12 @@ module.exports = appInfo => {
       plugins: [],
     },
   };
+
+  config.security = {
+    csrf: {
+      enable: false
+    }
+  }
 
   return {
     ...config,
