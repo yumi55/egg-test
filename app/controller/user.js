@@ -1,6 +1,7 @@
 const Controller = require('egg').Controller
 
 class UserController extends Controller {
+
     async register() {
         const { ctx } = this
         // 校验
@@ -43,6 +44,10 @@ class UserController extends Controller {
             ...doc,
             token
         }
+    }
+
+    async list() {
+        this.ctx.body = await this.service.user.userList()
     }
 }
 

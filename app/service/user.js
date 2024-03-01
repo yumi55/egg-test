@@ -5,6 +5,9 @@ class UserService extends Service {
     get User() {
         return this.app.model.User
     }
+    userList() {
+        return this.User.find()
+    }
 
     findEmail(email) {
         return this.User.findOne({
@@ -24,5 +27,11 @@ class UserService extends Service {
             expiresIn: this.app.config.jwt.expiresIn
         })
     }
+
+    verifyToken(token) {
+        return jwt.verify(token, this.app.config.jwt.secret)
+    }
+
+
 }
 module.exports = UserService
