@@ -36,6 +36,11 @@ module.exports = appInfo => {
     }
   }
 
+  config.jwt = {
+    secret: 'egg-blog',
+    expiresIn: '1d'
+  }
+
   return {
     ...config,
     ...userConfig,
